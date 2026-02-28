@@ -32,3 +32,13 @@ body { font-family: sans-serif; margin: 0; line-height: 1.6; }
 }
 .card { border: 1px solid #ddd; padding: 20px; text-align: center; border-radius: 5px; }
 .footer { text-align: center; padding: 20px; background: #eee; margin-top: 40px; }
+/* Make the button change color when hovered */
+.btn:hover {
+  background-color: #0056b3; /* Darker blue */
+  cursor: pointer;
+}
+
+/* Make the button "sink" when clicked */
+.btn:active {
+  transform: translateY(2px);
+}
