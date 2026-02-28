@@ -1,44 +1,66 @@
-/* Core Layout */
-body { font-family: sans-serif; margin: 0; line-height: 1.6; }
-.container { max-width: 1000px; margin: auto; padding: 20px; }
+/* Base Styles */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial; }
 
-/* Header - Flexbox */
-.header { 
-    display: flex; 
-    justify-content: space-between; 
-    padding: 20px 5%; 
-    background: #333; 
-    color: white; 
-}
-.nav a { color: white; margin-left: 15px; text-decoration: none; }
-
-/* Hero - Responsive Flex */
-.hero { 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 20px; 
-    padding: 40px 0; 
-    align-items: center; 
-}
-.hero-text { flex: 2; min-width: 300px; }
-.hero-card { flex: 1; background: #f4f4f4; padding: 20px; border-radius: 8px; text-align: center; }
-.btn { display: inline-block; background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
-
-/* Grid - Responsive Columns */
-.grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 20px; 
-}
-.card { border: 1px solid #ddd; padding: 20px; text-align: center; border-radius: 5px; }
-.footer { text-align: center; padding: 20px; background: #eee; margin-top: 40px; }
-/* Make the button change color when hovered */
-.btn:hover {
-  background-color: #0056b3; /* Darker blue */
-  cursor: pointer;
+/* 2. Container: Max width 1000px, centered with horizontal padding */
+.container { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
 }
 
-/* Make the button "sink" when clicked */
-.btn:active {
-  transform: translateY(2px);
+/* 1. Header: Logo left, Nav right (Desktop) */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+}
+.nav a { margin-left: 15px; text-decoration: none; color: black; }
+
+/* 3. Hero Section: Two columns, card aligns right */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+.hero-card {
+    width: 240px;
+    padding: 16px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* 4. Grid section: Desktop 4 columns */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding-bottom: 40px;
+}
+.card { border: 1px solid #ddd; padding: 18px; text-align: center; }
+
+/* 5. Hover Styles */
+.btn:hover { background-color: #f0f0f0; cursor: pointer; }
+.card:hover { border-color: #007bff; transform: translateY(-2px); transition: 0.2s; }
+
+/* Footer */
+.footer { padding: 16px; text-align: center; border-top: 1px solid #ddd; }
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Tablet (601px to 900px): 2 columns */
+@media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile (max-width: 600px): Stacking and 1 column */
+@media (max-width: 600px) {
+    .header { flex-direction: column; } /* Header stacked & centered */
+    .nav { margin-top: 10px; }
+    .hero { flex-direction: column; text-align: center; } /* Hero stacks vertically */
+    .hero-card { margin-top: 20px; }
+    .grid { grid-template-columns: 1fr; } /* 1 column grid */
 }
