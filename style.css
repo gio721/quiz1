@@ -41,3 +41,19 @@ body { font-family: sans-serif; color: #333; }
     .hero { flex-direction: column; text-align: center; }
     .grid { grid-template-columns: 1fr; }
 }
+/* Responsive Image Styling for Q4 */
+.responsive-plot {
+    max-width: 100%; /* Ensures image does not exceed container width */
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+}
+
+.caption {
+    background: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid #333;
+    margin-top: 10px;
+    font-style: italic;
+}
